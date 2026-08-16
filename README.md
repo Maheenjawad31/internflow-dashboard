@@ -1,5 +1,7 @@
 # InternFlow Dashboard
 
+**Live Demo:** https://internflow-dashboard.vercel.app/
+
 A lightweight web dashboard for managing interns, groups, and weekly task progress.
 
 ## Overview
