@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>InternFlow Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         Sidebar
+    ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                IF
+            </div>
+
+            <div>
+                <h1>InternFlow</h1>
+                <span>Team Dashboard</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-item active"
+                data-view="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-view="groups"
+            >
+                <span>◉</span>
+                Groups
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-view="members"
+            >
+                <span>●</span>
+                Members
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-view="tasks"
+            >
+                <span>✓</span>
+                Tasks
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <span>InternFlow Prototype</span>
+
+            <small>
+                Team management dashboard
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================================
+         Main Content
+    ========================================= -->
+
+    <main class="main-content">
+
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="eyebrow">
+                    Team Overview
+                </span>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <div class="status-indicator">
+
+                    <span></span>
+
+                    System Ready
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ====================================
+             Dashboard
+        ===================================== -->
+
+        <section
+            id="dashboardView"
+            class="view active-view"
+        >
+
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <h3>
+                        Welcome to your team dashboard
+                    </h3>
+
+                    <p>
+                        Monitor groups, members, and task progress
+                        from one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Groups
+                        </span>
+
+                        <strong id="totalGroups">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Interns
+                        </span>
+
+                        <strong id="totalInterns">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Completed Tasks
+                        </span>
+
+                        <strong id="completedTasks">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◷
+                    </div>
+
+                    <div>
+
+                        <span>
+                            In Progress
+                        </span>
+
+                        <strong id="progressTasks">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard Panels -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- Groups Panel -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                Groups
+                            </span>
+
+                            <h3>
+                                Active Groups
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="text-button"
+                            data-view-target="groups"
+                        >
+                            View all
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="dashboardGroups"
+                        class="group-preview"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- Task Progress Panel -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                Tasks
+                            </span>
+
+                            <h3>
+                                Task Progress
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="text-button"
+                            data-view-target="tasks"
+                        >
+                            View all
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="taskOverview"
+                        class="task-overview"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================
+             Groups
+        ===================================== -->
+
+        <section
+            id="groupsView"
+            class="view"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    Organization
+                </span>
+
+                <h3>
+                    Groups
+                </h3>
+
+                <p>
+                    View all intern groups and their progress.
+                </p>
+
+            </div>
+
+
+            <div
+                id="groupsContainer"
+                class="cards-grid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ====================================
+             Members
+        ===================================== -->
+
+        <section
+            id="membersView"
+            class="view"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    Team Directory
+                </span>
+
+                <h3>
+                    Members
+                </h3>
+
+                <p>
+                    Search and filter interns by domain or group.
+                </p>
+
+            </div>
+
+
+            <!-- Member Filters -->
+
+            <div class="filter-bar">
+
+
+                <div class="search-wrapper">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="memberSearch"
+                        placeholder="Search members..."
+                    >
+
+                </div>
+
+
+                <select id="domainFilter">
+
+                    <option value="all">
+                        All Domains
+                    </option>
+
+                    <option value="Frontend">
+                        Frontend
+                    </option>
+
+                    <option value="Backend">
+                        Backend
+                    </option>
+
+                    <option value="Design">
+                        Design
+                    </option>
+
+                    <option value="QA">
+                        QA
+                    </option>
+
+                </select>
+
+
+                <select id="groupFilter">
+
+                    <option value="all">
+                        All Groups
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="membersContainer"
+                class="members-table-wrapper"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ====================================
+             Tasks
+        ===================================== -->
+
+        <section
+            id="tasksView"
+            class="view"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    Task Management
+                </span>
+
+                <h3>
+                    Tasks
+                </h3>
+
+                <p>
+                    Track task status and mark completed work.
+                </p>
+
+            </div>
+
+
+            <!-- Task Filters -->
+
+            <div class="filter-bar">
+
+
+                <div class="search-wrapper">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="taskSearch"
+                        placeholder="Search tasks..."
+                    >
+
+                </div>
+
+
+                <select id="taskStatusFilter">
+
+                    <option value="all">
+                        All Statuses
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Complete">
+                        Complete
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="tasksContainer"
+                class="tasks-list"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+     Member Details Modal
+========================================= -->
+
+<div
+id="memberModal"
+class="member-modal"
+aria-hidden="true"
+>
+<div class="member-modal-content">
+
+    <button
+        id="closeMemberModal"
+        class="modal-close"
+        type="button"
+    >
+        ×
+    </button>
+
+    <div
+        id="memberModalContent"
+        class="member-modal-body"
+    ></div>
+
+</div>
+</div>
+
+
+<script
+type="module"
+src="js/app.js"
+></script>
+
+</body>
+</html>

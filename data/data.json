@@ -1,0 +1,132 @@
+{
+    "groups": [
+      {
+        "id": 1,
+        "name": "Frontend Team",
+        "domain": "Frontend",
+        "description": "Interns working on web interfaces and user experiences."
+      },
+      {
+        "id": 2,
+        "name": "Backend Team",
+        "domain": "Backend",
+        "description": "Interns working on APIs, databases, and server-side development."
+      },
+      {
+        "id": 3,
+        "name": "Design Team",
+        "domain": "UI/UX",
+        "description": "Interns working on interface design and user experience."
+      },
+      {
+        "id": 4,
+        "name": "QA Team",
+        "domain": "Testing",
+        "description": "Interns working on testing, quality assurance, and bug tracking."
+      }
+    ],
+  
+    "interns": [
+      {
+        "id": 1,
+        "name": "Ayesha Khan",
+        "email": "ayesha@example.com",
+        "domain": "Frontend",
+        "groupId": 1
+      },
+      {
+        "id": 2,
+        "name": "Hamza Ali",
+        "email": "hamza@example.com",
+        "domain": "Frontend",
+        "groupId": 1
+      },
+      {
+        "id": 3,
+        "name": "Sara Ahmed",
+        "email": "sara@example.com",
+        "domain": "Backend",
+        "groupId": 2
+      },
+      {
+        "id": 4,
+        "name": "Usman Tariq",
+        "email": "usman@example.com",
+        "domain": "Backend",
+        "groupId": 2
+      },
+      {
+        "id": 5,
+        "name": "Maham Noor",
+        "email": "maham@example.com",
+        "domain": "UI/UX",
+        "groupId": 3
+      },
+      {
+        "id": 6,
+        "name": "Zainab Raza",
+        "email": "zainab@example.com",
+        "domain": "UI/UX",
+        "groupId": 3
+      },
+      {
+        "id": 7,
+        "name": "Bilal Shah",
+        "email": "bilal@example.com",
+        "domain": "Testing",
+        "groupId": 4
+      },
+      {
+        "id": 8,
+        "name": "Hassan Malik",
+        "email": "hassan@example.com",
+        "domain": "Testing",
+        "groupId": 4
+      }
+    ],
+  
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Skeleton Loading Interface",
+        "week": 1,
+        "groupId": 1,
+        "status": "Complete"
+      },
+      {
+        "id": 2,
+        "title": "Intern Dashboard Prototype",
+        "week": 2,
+        "groupId": 1,
+        "status": "In Progress"
+      },
+      {
+        "id": 3,
+        "title": "API Integration",
+        "week": 2,
+        "groupId": 2,
+        "status": "Pending"
+      },
+      {
+        "id": 4,
+        "title": "Database Design",
+        "week": 2,
+        "groupId": 2,
+        "status": "In Progress"
+      },
+      {
+        "id": 5,
+        "title": "Dashboard UI Design",
+        "week": 2,
+        "groupId": 3,
+        "status": "Complete"
+      },
+      {
+        "id": 6,
+        "title": "Responsive Testing",
+        "week": 2,
+        "groupId": 4,
+        "status": "Pending"
+      }
+    ]
+  }
